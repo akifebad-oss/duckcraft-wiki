@@ -4,7 +4,7 @@ DuckCraft sunucusuna bilgisayar üzerinden katılmak isteyen oyuncular için haz
 
 ::: tip SUNUCU BİLGİLERİ
 * **Sunucu Adresi (IP):** `mc.duckcraft.com.tr`
-* **Sürüm:** 1.20.x (Önerilen En Güncel Java Sürümü)
+* **Sürüm:** 1.16.5 ve üzeri fakat Önerilen sürüm taban sürüm 1.21.1
 * **Platform:** Minecraft Java Edition
 :::
 
