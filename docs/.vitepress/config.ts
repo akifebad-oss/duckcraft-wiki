@@ -28,7 +28,7 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'Towny Nedir?', link: '/towny/nedir' },
-              { text: 'Towny Kuralları', link: '/towny/kurallar' }
+              { text: 'Kuşatma Savaşları', link: '/towny/kusatma' }
             ]
           }
         ]
