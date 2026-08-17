@@ -2,18 +2,29 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "DuckCraft Dökümantasyon",
-  description: "DuckCraft resmi dökümantasyonu — Towny rehberleri, kurallar ve sistemler.",
+  description: "DuckCraft resmi dökümantasyonu — Kurallar, Towny rehberleri ve sistemler.",
   themeConfig: {
     siteTitle: 'DuckCraft Dökümantasyon',
     nav: [
       { text: 'Ana Sayfa', link: '/' },
+      { text: 'Kurallar', link: '/kurallar/genel' },
       { text: 'Giriş Rehberi', link: '/giris/bilgisayar' },
-      { text: 'Towny', link: '/towny/nedir' },
-      { text: 'Kurallar', link: '/kurallar/genel' }
+      { text: 'Towny', link: '/towny/nedir' }
     ],
     sidebar: [
       {
+        text: '📜 Kurallar',
+        collapsed: false,
+        items: [
+          { text: 'Genel Kurallar', link: '/kurallar/genel' },
+          { text: 'Cezalandırma ve Şikayet Yönetimi', link: '/kurallar/cezalandirma' },
+          { text: 'Ceza Profili ve Ceza Sistemi', link: '/kurallar/ceza-sistemi' },
+          { text: 'AAC Kontrolleri ve Kuralları', link: '/kurallar/aac' }
+        ]
+      },
+      {
         text: '📖 Rehberler & Sistemler',
+        collapsed: false,
         items: [
           {
             text: '🎮 Giriş Rehberi',
@@ -40,15 +51,6 @@ export default defineConfig({
               }
             ]
           }
-        ]
-      },
-      {
-        text: '📋 Genel Kurallar',
-        collapsed: false,
-        items: [
-          { text: 'Genel Kurallar ve Hizmet Politikası', link: '/kurallar/genel' },
-          { text: 'Cezalandırma Süreci ve Şikayet Yönetimi', link: '/kurallar/cezalandirma' },
-          { text: 'Sohbet Kuralları', link: '/kurallar/sohbet' }
         ]
       }
     ],
