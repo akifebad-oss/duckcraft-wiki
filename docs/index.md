@@ -17,7 +17,7 @@ features:
     details: Bilgisayar ve mobil cihazlardan DuckCraft sunucusuna nasıl katılacağınızı öğrenin.
     link: /giris/bilgisayar
   - title: 🏰 Towny Rehberi
-    details: Kasaba kurma, ulus yönetimi ve arazi koruma sistemlerinin tüm detayları.
+    details: Towny kurma, ulus yönetimi ve arazi koruma sistemlerinin tüm detayları.
     link: /towny/nedir
   - title: 📋 Sunucu Kuralları
     details: Sunucu içi düzen, sohbet standartları, trap ve claim tacizi sınırlandırmaları.
