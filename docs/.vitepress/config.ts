@@ -3,8 +3,16 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "DuckCraft Dökümantasyon",
   description: "DuckCraft resmi dökümantasyonu — Kurallar, Towny rehberleri ve sistemler.",
+  
+  // Tarayıcı sekmesindeki logo (favicon) ayarı
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }] // docs/public/logo.png dosyanızı okur
+  ],
+
   themeConfig: {
     siteTitle: 'DuckCraft Dökümantasyon',
+    logo: '/logo.png', // İsteğe bağlı: Üst menü çubuğundaki başlığın yanına da logo ekler
+    
     nav: [
       { text: 'Ana Sayfa', link: '/' },
       { text: 'Kurallar', link: '/kurallar/genel' },
