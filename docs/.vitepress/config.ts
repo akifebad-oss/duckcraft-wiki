@@ -32,7 +32,7 @@ export default defineConfig({
                 text: '⚔️ Kuşatma Savaşları',
                 collapsed: false,
                 items: [
-                  { text: 'Kuşatma Nedir?', link: '/towny/kusatma/kusatmanedir' },
+                  { text: 'Kuşatma Nedir?', link: '/towny/kusatma/nedir' },
                   { text: 'Kuşatma Kuralları', link: '/towny/kusatma/kurallar' },
                   { text: 'Kuşatma Komutları', link: '/towny/kusatma/komutlar' },
                   { text: 'Fethetme ve İsyan', link: '/towny/kusatma/fethetme-isyan' }
