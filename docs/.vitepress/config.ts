@@ -13,26 +13,33 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: '🎮 GİRİŞ REHBERİ',
+        text: '📖 Rehberler & Sistemler',
         items: [
-          { text: 'Bilgisayar İçin Giriş Rehberi', link: '/giris/bilgisayar' },
-          { text: 'Telefon İçin Giriş Rehberi', link: '/giris/telefon' }
+          {
+            text: '🎮 Giriş Rehberi',
+            collapsed: false,
+            items: [
+              { text: 'Bilgisayar İçin Giriş Rehberi', link: '/giris/bilgisayar' },
+              { text: 'Telefon İçin Giriş Rehberi', link: '/giris/telefon' }
+            ]
+          },
+          {
+            text: '🏰 Towny',
+            collapsed: false,
+            items: [
+              { text: 'Towny Nedir?', link: '/towny/nedir' },
+              { text: 'Towny Kuralları', link: '/towny/kurallar' }
+            ]
+          }
         ]
       },
       {
-        text: '🏰 TOWNY',
-        items: [
-          { text: 'Towny Nedir?', link: '/towny/nedir' }
-        ]
-      },
-      {
-        text: '📋 KURALLAR',
+        text: '📋 Genel Kurallar',
+        collapsed: false,
         items: [
           { text: 'Genel Kurallar ve Hizmet Politikası', link: '/kurallar/genel' },
           { text: 'Cezalandırma Süreci ve Şikayet Yönetimi', link: '/kurallar/cezalandirma' },
-          { text: 'Sohbet Kuralları', link: '/kurallar/sohbet' },
-          { text: 'Trap Kuralları', link: '/kurallar/trap' },
-          { text: 'Claim Tacizi Kuralları', link: '/kurallar/claim-tacizi' }
+          { text: 'Sohbet Kuralları', link: '/kurallar/sohbet' }
         ]
       }
     ],
