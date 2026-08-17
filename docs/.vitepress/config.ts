@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "DuckCraft Dökümantasyon",
-  description: "DuckCraft resmi dökümantasyonu — Towny rehberleri, kurallar, komutlar ve sunucuya katılım kılavuzları.",
+  description: "DuckCraft resmi dökümantasyonu — Towny rehberleri, kurallar ve sistemler.",
   themeConfig: {
     siteTitle: 'DuckCraft Dökümantasyon',
     nav: [
@@ -28,7 +28,16 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'Towny Nedir?', link: '/towny/nedir' },
-              { text: 'Kuşatma Savaşları', link: '/towny/kusatma' }
+              {
+                text: '⚔️ Kuşatma Savaşları',
+                collapsed: false,
+                items: [
+                  { text: 'Kuşatma Nedir?', link: '/towny/kusatma/nedir' },
+                  { text: 'Kuşatma Kuralları', link: '/towny/kusatma/kurallar' },
+                  { text: 'Kuşatma Komutları', link: '/towny/kusatma/komutlar' },
+                  { text: 'Fethetme ve İsyan', link: '/towny/kusatma/fethetme-isyan' }
+                ]
+              }
             ]
           }
         ]
