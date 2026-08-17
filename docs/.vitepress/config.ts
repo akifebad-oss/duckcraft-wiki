@@ -19,7 +19,9 @@ export default defineConfig({
           { text: 'Genel Kurallar', link: '/kurallar/genel' },
           { text: 'Cezalandırma ve Şikayet Yönetimi', link: '/kurallar/cezalandirma' },
           { text: 'Ceza Profili ve Ceza Sistemi', link: '/kurallar/ceza-sistemi' },
-          { text: 'AAC Kontrolleri ve Kuralları', link: '/kurallar/aac' }
+          { text: 'AAC Kontrolleri ve Kuralları', link: '/kurallar/aac' },
+          { text: 'Dolandırıcılık İhlalleri', link: '/kurallar/dolandiricilik' },
+          { text: '3. Parti Yazılımlar ve Yasaklı Modlar', link: '/kurallar/yasakli-modlar' }
         ]
       },
       {
@@ -39,6 +41,9 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'Towny Nedir?', link: '/towny/nedir' },
+              { text: 'Kasaba Komutları', link: '/towny/kasaba-komutlari' },
+              { text: 'Arsa Komutları', link: '/towny/arsa-komutlari' },
+              { text: 'Ulus Komutları', link: '/towny/ulus-komutlari' },
               {
                 text: '⚔️ Kuşatma Savaşları',
                 collapsed: false,
@@ -51,6 +56,13 @@ export default defineConfig({
               }
             ]
           }
+        ]
+      },
+      {
+        text: '🔄 İade İşlemleri',
+        collapsed: false,
+        items: [
+          { text: 'İade Politikası Ve İşleyişi', link: '/iade/iade-politikasi' }
         ]
       }
     ],
