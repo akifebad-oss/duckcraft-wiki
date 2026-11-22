@@ -1,92 +1,70 @@
-# Arsa Yönetimi ve Komutları
+# Arsa (Plot) Sistemi ve İzin Yönetimi
 
-DuckCraft'ta kasaba içerisindeki parselleri yönetmek, kişisel alanlar oluşturmak ve izinsiz müdahaleleri engellemek için arsa komutları kullanılır.
-
----
-
-### Temel Arsa Sahipliği ve İşlemleri
-Arsa alma, satma ve isim düzenleme gibi temel işlevler:
-
-* `/plot claim` — Satışa çıkarılmış bir arsayı üzerinize geçirir.
-* `/plot unclaim` — Sahip olduğunuz arsayı terk eder, tekrar boşa çıkarır.
-* `/plot fs` veya `/plot forsale` — Arsayı girdiğiniz fiyat üzerinden pazara çıkarır.
-* `/plot nfs` veya `/plot notforsale` — Satılık olan arsayı pazardan çeker.
-* `/plot set name <Yeni İsim>` — Arsanıza özel bir isim verir.
-* `/plot clear` — Arsa üzerindeki kilitli tabelaları ve satış marketlerini temizler.
-* `/plot evict` — Arsa üzerinde kiracı veya izinsiz bulunan oyuncuyu alandan tahliye eder.
+Kasaba içerisindeki her bir chunk, ayrı bir **arsa (plot)** olarak özelleştirilebilir. Arsa komutları sayesinde vatandaşlara özel yaşam alanları satabilir, tarım veya arena bölgeleri oluşturabilir ve kimin hangi bloğa dokunabileceğini en ince ayrıntısına kadar kontrol edebilirsiniz.
 
 ---
 
-### Arsa Türü Belirleme
-Arsanıza işlevsel bir rol tanımlamak için bu kategoriyi kullanabilirsiniz:
+### Temel Arsa İşlemleri
 
-* `/plot set farm` — Bölgeyi tarım ve çiftçilik alanına çevirir.
-* `/plot set arena` — Alana PvP ve savaş alanı niteliği kazandırır.
-* `/plot set bank` — Arsayı kasa/banka alanı olarak yapılandırır.
-* `/plot set embassy` — Yabancı oyuncular için elçilik alanı tanımlar.
-* `/plot set inn` — Konaklama ve otel alanı olarak belirler.
-* `/plot set jail` — Arsayı cezaevi/hapishane bölgesine dönüştürür.
-* `/plot set wilds` — Arsayı doğal/vahşi alan statüsüne getirir.
-
----
-
-### Arsa İçi Güvenlik ve Kurallar (Toggle)
-Arsanızda geçerli olacak çevre kurallarını belirlemek için:
-
-* `/plot toggle pvp on/off` — Parsel sınırları dahilinde PvP'yi aktif veya pasif yapar.
-* `/plot toggle mobs on/off` — Arsanızda yaratık doğmasını kontrol eder.
-* `/plot toggle explosion on/off` — Patlayıcı blokların arsanıza hasar vermesini önler.
-* `/plot toggle fire on/off` — Alevlerin yayılmasını ve blok yakmasını kısıtlar.
+| Komut | Açıklama |
+| :--- | :--- |
+| `/plot claim` | Satışa çıkarılmış durumdaki arsayı satın alarak üzerinize geçirir. |
+| `/plot unclaim` | Sahibi olduğunuz arsayı bırakır ve tekrar kasaba mülkiyetine döndürür. |
+| `/plot fs <Fiyat>` veya `/plot forsale` | Arsayı belirlediğiniz fiyattan satışa çıkarır. |
+| `/plot nfs` veya `/plot notforsale` | Satışta olan arsayı ilandan kaldırır. |
+| `/plot set name <İsim>` | Arsanıza haritada ve giriş bildirimlerinde görünecek özel bir isim verir. |
+| `/plot clear` | Arsadaki kilitli tabelaları ve sandık marketlerini temizler. |
+| `/plot evict` | Arsayı kullanan kişiyi tahliye ederek arsayı geri alır. |
 
 ---
 
-### Oyuncu Erişim ve Güven Yetkileri
-Arsanıza arkadaşlarınızı dahil etmek veya belirli yetkiler vermek için:
+### Arsa Türünü Değiştirme
 
-* `/plot trust add <Oyuncu Adı>` — Oyuncuyu güvenilir ilan eder ve geniş erişim sağlar.
-* `/plot trust remove <Oyuncu Adı>` — Oyuncunun arsadaki güven yetkisini iptal eder.
-* `/plot perm add <Oyuncu Adı>` — Oyuncuya özel bir arsa izni tanımlar.
-* `/plot perm remove <Oyuncu Adı>` — Oyuncudan özel arsa iznini geri alır.
-* `/plot perm gui` — Yetki ayarlarını grafik arayüz (GUI) paneli üzerinden yönetmenizi sağlar.
-* `/plot perm hud` — Mevcut arsanın izin durumunu ekranınızda gösterir.
+Kasaba yöneticileri, bulundukları chunk'ın işlevini değiştirerek özel alanlar oluşturabilir:
 
----
-
-### İnce Ayar Arsa İzinleri (Group & Role Perms)
-Arsanızda kimlerin blok kırabileceğini (`destroy`), koyabileceğini (`build`), kapı/şalter kullanabileceğini (`switch`) veya eşya etkileşimi yapabileceğini (`itemuse`) ayarlamak için:
-
-* `/plot set perm resident build/destroy/switch/itemuse on/off` — Kasaba üyelerinin yetkileri.
-* `/plot set perm ally build/destroy/switch/itemuse on/off` — Müttefik oyuncuların yetkileri.
-* `/plot set perm nation build/destroy/switch/itemuse on/off` — Aynı ulustakilerin yetkileri.
-* `/plot set perm friend build/destroy/switch/itemuse on/off` — Eklediğiniz arkadaşlarınızın yetkileri.
-* `/plot set perm outsider build/destroy/switch/itemuse on/off` — Dışarıdan gelen yabancıların yetkileri.
-* `/plot set perm build/destroy/switch/itemuse on/off` — Herkesi kapsayan genel izin ayarı.
-* `/plot set perm reset` — Tüm arsa izin yapılandırmasını varsayılana döndürür.
+* `/plot set farm` — Arsayı **Tarım Alanı** yapar (Yalnızca ekin ekme/biçme odaklı düzen).
+* `/plot set arena` — Arsayı **Arena** yapar (PvP her zaman aktif olur).
+* `/plot set bank` — Arsayı **Banka** bölgesi olarak tanımlar.
+* `/plot set embassy` — Yabancı kasaba oyuncularının bile satın alabileceği **Elçilik** arsası oluşturur.
+* `/plot set inn` — Oyuncuların konaklayabileceği **Han (Inn)** alanı yapar.
+* `/plot set jail` — Kasaba kurallarını ihlal edenlerin tutulacağı **Hapishane** alanını belirler.
+* `/plot set wilds` — Arsayı doğal kaynakların toplanabileceği **Vahşi Bölge** yapar.
 
 ---
 
-### Arsa Gruplandırma ve Toplu Yönetim
-Yan yana birden fazla arsayı birleştirerek grup halinde yönetmek için:
+### Arsa İçi Güvenlik Ayarları (Toggle)
 
-* `/plot group add <Grup İsmi>` — İçinde durduğunuz arsayı bir gruba dahil eder.
-* `/plot group remove` — Arsayı bağlı olduğu gruptan ayırır.
-* `/plot group delete <Grup İsmi>` — Oluşturulan grubu tamamen siler.
-* `/plot group rename <Yeni Grup İsmi>` — Arsa grubunun adını değiştirir.
-* `/plot group forsale` veya `/plot group fs` — Grup içerisindeki tüm arsaları topluca satışa çıkarır.
-* `/plot group notforsale` veya `/plot group nfs` — Grubun satış durumunu kaldırır.
-* `/plot group toggle` — Grup arsalarının varsayılan niteliklerini düzenler.
-* `/plot group toggle pvp/fire/mobs/explosion on/off` — Grubun güvenlik ve çevre ayarlarını topluca yönetir.
-* `/plot group gui` — Grup izinlerini menü üzerinden kolayca ayarlamanızı sağlar.
+Kendi arsanızda geçerli olacak kuralları kasabadan bağımsız olarak ayarlayabilirsiniz:
+
+* `/plot toggle pvp on/off` — Arsa sınırları içinde PvP'yi açar veya kapatır.
+* `/plot toggle mobs on/off` — Arsa içinde yaratık doğmasını engeller veya izin verir.
+* `/plot toggle explosion on/off` — Patlamaların arsanıza zarar vermesini kontrol eder.
+* `/plot toggle fire on/off` — Yangın çıkmasını ve blokların yanmasını açar veya kapatır.
 
 ---
 
-### Grup Yetki Yönetimi
-* `/plot group set perm on/off` — Tüm grubun izinlerini genel olarak açar/kapatır.
-* `/plot group set perm resident build/destroy/switch/itemuse on/off` — Grup dahilinde kasaba üyesi yetkileri.
-* `/plot group set perm ally build/destroy/switch/itemuse on/off` — Grup dahilinde müttefik yetkileri.
-* `/plot group set perm nation build/destroy/switch/itemuse on/off` — Grup dahilinde ulus üyesi yetkileri.
-* `/plot group set perm friend build/destroy/switch/itemuse on/off` — Grup dahilinde arkadaş yetkileri.
-* `/plot group set perm outsider build/destroy/switch/itemuse on/off` — Grup dahilinde yabancı oyuncu yetkileri.
-* `/plot group perm add <Oyuncu Adı>` — Bir oyuncuya grup bazlı özel yetki atar.
-* `/plot group perm remove <Oyuncu Adı>` — Oyuncunun grup yetkisini kaldırır.
-* `/plot group set perm reset` — Gruba bağlı tüm parsellerin yetkilerini sıfırlar.
+### Oyuncu Bazlı Yetkilendirme
+
+Arsanıza ortak almak veya belirli bir kişiye erişim vermek için:
+
+* `/plot trust add <Oyuncu>` — Oyuncuyu arsanızda tam güvenilir ilan eder (Blok kırabilir, koyabilir ve sandıkları açabilir).
+* `/plot trust remove <Oyuncu>` — Oyuncunun güvenilirlik yetkisini kaldırır.
+* `/plot perm add <Oyuncu>` — Oyuncuya özel arsa izni tanımlar.
+* `/plot perm remove <Oyuncu>` — Oyuncudan özel arsa iznini geri alır.
+* `/plot perm gui` — Arsa izinlerini karmaşık komutlar yazmadan görsel menü (GUI) üzerinden ayarlamanızı sağlar.
+* `/plot perm hud` — Durduğunuz arsanın mevcut izin tablosunu ekranda gösterir.
+
+---
+
+### Gelişmiş Grup İzin Matrisi
+
+Towny'de izinler 4 eylem ve 5 oyuncu grubu üzerinden yönetilir:
+* **Eylemler:** `build` (blok koyma), `destroy` (blok kırma), `switch` (kapı, şalter, düğme kullanma), `itemuse` (kova, çakmak vb. eşya kullanma).
+* **Gruplar:** `resident` (kasaba üyesi), `nation` (ulus üyesi), `ally` (müttefik), `friend` (arkadaş), `outsider` (yabancı).
+
+```bash
+# Örnek Kullanım: Kasaba üyelerinin blok koymasına izin verir
+/plot set perm resident build on
+
+# Örnek Kullanım: Yabancıların sandık/kapı açmasını engeller
+/plot set perm outsider switch off
